@@ -1,7 +1,8 @@
 # ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) AzerothCore
-## mod-skip-dk
-- Latest build status with azerothcore: [![Build Status](https://github.com/Crypticaz/SkipDeathKnightStartingArea/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/Crypticaz/SkipDeathKnightStartingArea)
 
+## mod-skip-dk-starting-area
+
+- Latest build status with azerothcore: [![Build Status](https://github.com/azerothcore/mod-skip-dk-starting-area/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-skip-dk-starting-area)
 
 ## Description
 
@@ -15,14 +16,12 @@
 
 ## Requirements
 
-- AzerothCore v3.0.0
+- Latest AzerothCore Wotlk commit
 
 ## Installation
 
-```
-1) Simply place the module under the `modules` directory of your AzerothCore source. 
-3) Re-run cmake and launch a clean build of AzerothCore.
-```
+1. Simply place the module under the `modules` directory of your AzerothCore source. 
+1. Re-run CMake and rebuild the AzerothCore source.
 
 ## Edit module configuration (optional)
 
@@ -30,5 +29,6 @@ If you need to change the module configuration, go to your server configuration 
 
 ### Credits ###
 ------------------------------------------------------------------------------------------------------------------
-- [acidmanifesto](https://github.com/acidmanifesto/TC-Custom-Scripts/tree/main/335%20TC/Official%20Trinitycore%20Custom%20Scripts/Official%20Merged/Skip%20Death%20Knight%20Starter%20Area%20Module)
+- [acidmanifesto (MDic)](https://github.com/acidmanifesto/TC-Custom-Scripts/tree/main/335%20TC/Official%20Trinitycore%20Custom%20Scripts/Official%20Merged/Skip%20Death%20Knight%20Starter%20Area%20Module)
+- [Jinnaix](https://github.com/Jinnaix)
 - AzerothCore: [repository](https://github.com/azerothcore) - [website](http://azerothcore.org/) - [discord chat community](https://discord.gg/PaqQRkd)
