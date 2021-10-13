@@ -209,7 +209,7 @@ public:
             return true;
         }
 
-        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId) override
+        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId)
         {
             int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
             CloseGossipMenuFor(player);
