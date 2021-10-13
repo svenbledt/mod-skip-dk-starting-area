@@ -223,7 +223,7 @@ public:
                 break;
 
             case 12:
-                if (player->GetLevel() <= DKL)
+                if (player->getLevel() <= DKL)
                 {
                     player->SetLevel(DKL);
                 }
