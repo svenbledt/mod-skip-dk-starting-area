@@ -41,7 +41,7 @@ class AzerothCore_skip_deathknight : public PlayerScript
 public:
     AzerothCore_skip_deathknight() : PlayerScript("AzerothCore_skip_deathknight") { }
 
-    void OnFirstLogin(Player* player) override
+    void OnFirstLogin(Player* player)
     {
         int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
 
