@@ -178,7 +178,7 @@ public:
     {
         npc_SkipLichAI(Creature* creature) : ScriptedAI(creature) { }
 
-        bool OnGossipHello(Player* player) override
+        bool OnGossipHello(Player* player)
         {
             if (me->IsQuestGiver())
             {
