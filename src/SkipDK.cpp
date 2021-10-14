@@ -266,11 +266,11 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12801), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
-                if (player->GetTeamId() == ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
-                else if (player->GetTeamId() == HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
+                else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
-                if (player->GetTeamId() == ALLIANCE)
+                if (player->GetTeamId() == TEAM_ALLIANCE)
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
