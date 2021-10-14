@@ -227,15 +227,15 @@ public:
                 {
                     player->SetLevel(DKL);
                 }
-                player->LearnSpell(53428, false);//runeforging
-                player->LearnSpell(53441, false);//runeforging
-                player->LearnSpell(53344, false);//runeforging
-                player->LearnSpell(62158, false);//runeforging
-                player->LearnSpell(33391, false);//journeyman riding
-                player->LearnSpell(54586, false);//runeforging credit
-                player->LearnSpell(48778, false);//acherus deathcharger
-                player->LearnSkillRewardedSpells(776, 375);//Runeforging
-                player->LearnSkillRewardedSpells(960, 375);//Runeforging
+                player->learnSpell(53428, false);//runeforging
+                player->learnSpell(53441, false);//runeforging
+                player->learnSpell(53344, false);//runeforging
+                player->learnSpell(62158, false);//runeforging
+                player->learnSpell(33391, false);//journeyman riding
+                player->learnSpell(54586, false);//runeforging credit
+                player->learnSpell(48778, false);//acherus deathcharger
+                player->learnSkillRewardedSpells(776, 375);//Runeforging
+                player->learnSkillRewardedSpells(960, 375);//Runeforging
                 player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
                 player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
                 player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
