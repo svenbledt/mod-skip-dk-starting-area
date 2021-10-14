@@ -2,5 +2,5 @@ void AddSkipDKScripts();
 
 void AddmodSkipDKScripts()
 {
-AddSkipDKScripts();
+    AddSkipDKScripts();
 }
