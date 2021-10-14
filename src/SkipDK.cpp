@@ -41,7 +41,7 @@ class AzerothCore_skip_deathknight : public PlayerScript
 public:
     AzerothCore_skip_deathknight() : PlayerScript("AzerothCore_skip_deathknight") { }
 
-    void OnFirstLogin(Player* player) override
+    void OnFirstLogin(Player* player)
     {
         int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
 
@@ -178,7 +178,7 @@ public:
     {
         npc_SkipLichAI(Creature* creature) : ScriptedAI(creature) { }
 
-        bool OnGossipHello(Player* player) override
+        bool OnGossipHello(Player* player)
         {
             if (me->IsQuestGiver())
             {
@@ -209,7 +209,7 @@ public:
             return true;
         }
 
-        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId) override
+        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId)
         {
             int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
             CloseGossipMenuFor(player);
@@ -223,19 +223,19 @@ public:
                 break;
 
             case 12:
-                if (player->GetLevel() <= DKL)
+                if (player->getLevel() <= DKL)
                 {
                     player->SetLevel(DKL);
                 }
-                player->LearnSpell(53428, false);//runeforging
-                player->LearnSpell(53441, false);//runeforging
-                player->LearnSpell(53344, false);//runeforging
-                player->LearnSpell(62158, false);//runeforging
-                player->LearnSpell(33391, false);//journeyman riding
-                player->LearnSpell(54586, false);//runeforging credit
-                player->LearnSpell(48778, false);//acherus deathcharger
-                player->LearnSkillRewardedSpells(776, 375);//Runeforging
-                player->LearnSkillRewardedSpells(960, 375);//Runeforging
+                player->learnSpell(53428, false);//runeforging
+                player->learnSpell(53441, false);//runeforging
+                player->learnSpell(53344, false);//runeforging
+                player->learnSpell(62158, false);//runeforging
+                player->learnSpell(33391, false);//journeyman riding
+                player->learnSpell(54586, false);//runeforging credit
+                player->learnSpell(48778, false);//acherus deathcharger
+                player->learnSkillRewardedSpells(776, 375);//Runeforging
+                player->learnSkillRewardedSpells(960, 375);//Runeforging
                 player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
                 player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
                 player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
@@ -266,11 +266,11 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12801), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
-                if (player->GetTeam() == ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
-                else if (player->GetTeam() == HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
+                else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
-                if (player->GetTeam() == ALLIANCE)
+                if (player->GetTeamId() == TEAM_ALLIANCE)
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
