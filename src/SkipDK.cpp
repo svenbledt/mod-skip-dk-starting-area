@@ -174,7 +174,7 @@ class Azerothcore_optional_deathknight_skip : public CreatureScript
 public:
     Azerothcore_optional_deathknight_skip() : CreatureScript("npc_ac_skip_lich") { }
 
-        bool OnGossipHello(Player* player, Creature* creature)
+        bool OnGossipHello(Player* player, Creature* creature) override
         {
             if (creature->IsQuestGiver())
             {
