@@ -174,15 +174,11 @@ class Azerothcore_optional_deathknight_skip : public CreatureScript
 public:
     Azerothcore_optional_deathknight_skip() : CreatureScript("npc_ac_skip_lich") { }
 
-    struct npc_SkipLichAI : public ScriptedAI
-    {
-        npc_SkipLichAI(Creature* creature) : ScriptedAI(creature) { }
-
-        bool OnGossipHello(Player* player)
+        bool OnGossipHello(Player* player, Creature* creature) override
         {
-            if (me->IsQuestGiver())
+            if (creature->IsQuestGiver())
             {
-                player->PrepareQuestMenu(me->GetGUID());
+                player->PrepareQuestMenu(creature->GetGUID());
             }
 
             if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Optional.Enable", true))
@@ -203,23 +199,22 @@ public:
                 }
                 AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, localizedEntry, GOSSIP_SENDER_MAIN, 11);
             }
-
-            player->TalkedToCreature(me->GetEntry(), me->GetGUID());
-            SendGossipMenuFor(player, player->GetGossipTextId(me), me->GetGUID());
+            player->TalkedToCreature(creature->GetEntry(), creature->GetGUID());
+            SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
             return true;
         }
 
-        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId)
+        bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
         {
             int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
             CloseGossipMenuFor(player);
-
+            ClearGossipMenuFor(player);
             switch (gossipListId)
             {
             case 11:
                 AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Yes", GOSSIP_SENDER_MAIN, 12);
                 AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "No", GOSSIP_SENDER_MAIN, 13);
-                SendGossipMenuFor(player, player->GetGossipTextId(me), me->GetGUID());
+                SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
                 break;
 
             case 12:
@@ -288,12 +283,6 @@ public:
             }
             return true;
         }
-    };
-
-    CreatureAI* GetAI(Creature* creature) const override
-    {
-        return new npc_SkipLichAI(creature);
-    }
 };
 
 void AddSkipDKScripts()
