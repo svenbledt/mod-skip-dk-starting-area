@@ -29,7 +29,7 @@ public:
 
     void OnLogin(Player* Player)
     {
-        if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Announce.enable", true))
+        if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Announce.enable", true))
         {
             ChatHandler(Player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Azerothcore Skip Deathknight Starter |rmodule.");
         }
@@ -45,7 +45,7 @@ public:
     {
         int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
 
-        if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Enable", true))
+        if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true))
         {
             if (player->GetAreaId() == 4342)
             {
@@ -101,7 +101,7 @@ public:
             }
         }
 
-        if (sConfigMgr->GetBoolDefault("GM.Skip.Deathknight.Starter.Enable", true))
+        if (sConfigMgr->GetOption<bool>("GM.Skip.Deathknight.Starter.Enable", true))
         {
             if (player->GetSession()->GetSecurity() >= SEC_MODERATOR && player->GetAreaId() == 4342)
             {
@@ -185,7 +185,7 @@ public:
                 player->PrepareQuestMenu(me->GetGUID());
             }
 
-            if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Optional.Enable", true))
+            if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Optional.Enable", true))
             {
                 char const* localizedEntry;
                 switch (player->GetSession()->GetSessionDbcLocale())
