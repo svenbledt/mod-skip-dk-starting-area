@@ -18,8 +18,9 @@
 
 Due to the uniquiness of the module you will get this message on the worldconsole, but nothing is broken. It is due to the npc not exactly having a gossip menu in the database, the script handles the gossip menu because of the additional locales.
 ![image](https://user-images.githubusercontent.com/16887899/152654078-7b94c62c-a5e8-42ed-96ed-39ffaacf38b1.png)
-```
+
 Please add the adjustment to the conf to have that error message not show up:
+```
 #    Creatures.CustomIDs
 #        Description: The list of custom creatures with gossip dialogues hardcoded in core,
 #                     divided by "," without spaces.
