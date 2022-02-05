@@ -49,7 +49,7 @@ public:
         {
             if (player->GetAreaId() == 4342)
             {
-                player->SetLevel(DKL);
+                player->GiveLevel(DKL);
                 player->learnSpell(53428);//runeforging
                 player->learnSpell(53441);//runeforging
                 player->learnSpell(53344);//runeforging
@@ -105,7 +105,7 @@ public:
         {
             if (player->GetSession()->GetSecurity() >= SEC_MODERATOR && player->GetAreaId() == 4342)
             {
-                player->SetLevel(DKL);
+                player->GiveLevel(DKL);
                 player->learnSpell(53428);//runeforging
                 player->learnSpell(53441);//runeforging
                 player->learnSpell(53344);//runeforging
@@ -220,7 +220,7 @@ public:
             case 12:
                 if (player->getLevel() <= DKL)
                 {
-                    player->SetLevel(DKL);
+                    player->GiveLevel(DKL);
                 }
                 player->learnSpell(53428, false);//runeforging
                 player->learnSpell(53441, false);//runeforging
