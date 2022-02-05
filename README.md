@@ -49,5 +49,5 @@ If you need to change the module configuration, go to your server configuration 
 ### Credits ###
 ------------------------------------------------------------------------------------------------------------------
 - [acidmanifesto (MDic)](https://github.com/acidmanifesto/TC-Custom-Scripts/tree/main/335%20TC/Official%20Trinitycore%20Custom%20Scripts/Official%20Merged/Skip%20Death%20Knight%20Starter%20Area%20Module)
-- [Jinnaix](https://github.com/Jinnaix)
+- [Jinnaix](https://github.com/Jinnaix) For Translations assistance and sql formatting.
 - AzerothCore: [repository](https://github.com/azerothcore) - [website](http://azerothcore.org/) - [discord chat community](https://discord.gg/PaqQRkd)
