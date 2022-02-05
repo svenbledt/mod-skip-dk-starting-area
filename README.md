@@ -35,7 +35,7 @@ Creatures.CustomIDs = "190010,55005,999991,25462,98888"
 
 ## Requirements
 
-- Latest AzerothCore Wotlk commit
+- Latest AzerothCore Wotlk commit de13bf426e162ee10cbd5470cec74122d1d4afa0 or newer
 
 ## Installation
 
