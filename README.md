@@ -14,6 +14,11 @@
 2. Go into conf and set any features you want to enable or modify
 3. Make a Death Knight and login.
 
+## Notice
+
+Due to the uniquiness of the module you will get this message on the worldconsole, but nothing is broken. It is due to the npc not exactly having a gossip menu in the database, the script handles the gossip menu because of the additional locales.
+![image](https://user-images.githubusercontent.com/16887899/152654078-7b94c62c-a5e8-42ed-96ed-39ffaacf38b1.png)
+
 ## Requirements
 
 - Latest AzerothCore Wotlk commit
