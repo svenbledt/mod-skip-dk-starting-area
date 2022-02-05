@@ -43,7 +43,7 @@ public:
 
     void OnFirstLogin(Player* player)
     {
-        int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+        int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
 
         if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true))
         {
@@ -206,7 +206,7 @@ public:
 
         bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
         {
-            int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+            int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
             CloseGossipMenuFor(player);
             ClearGossipMenuFor(player);
             switch (gossipListId)
