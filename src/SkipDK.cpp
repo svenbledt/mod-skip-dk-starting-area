@@ -29,7 +29,7 @@ public:
 
     void OnLogin(Player* Player)
     {
-        if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Announce.enable", true) && (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Enable", true) || sConfigMgr->GetBoolDefault("Skip.Deathknight.Optional.Enable", true)))
+        if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Announce.enable", true) && (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Enable", true) || sConfigMgr->GetBoolDefault("Skip.Deathknight.Optional.Enable", true)))
         {
             ChatHandler(Player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Azerothcore Skip Deathknight Starter |rmodule.");
         }
