@@ -43,13 +43,13 @@ public:
 
     void OnFirstLogin(Player* player)
     {
-        int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+        int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
 
-        if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Enable", true))
+        if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true))
         {
             if (player->GetAreaId() == 4342)
             {
-                player->SetLevel(DKL);
+                player->GiveLevel(DKL);
                 player->learnSpell(53428);//runeforging
                 player->learnSpell(53441);//runeforging
                 player->learnSpell(53344);//runeforging
@@ -101,11 +101,11 @@ public:
             }
         }
 
-        if (sConfigMgr->GetBoolDefault("GM.Skip.Deathknight.Starter.Enable", true))
+        if (sConfigMgr->GetOption<bool>("GM.Skip.Deathknight.Starter.Enable", true))
         {
             if (player->GetSession()->GetSecurity() >= SEC_MODERATOR && player->GetAreaId() == 4342)
             {
-                player->SetLevel(DKL);
+                player->GiveLevel(DKL);
                 player->learnSpell(53428);//runeforging
                 player->learnSpell(53441);//runeforging
                 player->learnSpell(53344);//runeforging
@@ -181,7 +181,7 @@ public:
                 player->PrepareQuestMenu(creature->GetGUID());
             }
 
-            if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Optional.Enable", true))
+            if (sConfigMgr->GetOption<bool>("Skip.Deathknight.Optional.Enable", true))
             {
                 char const* localizedEntry;
                 switch (player->GetSession()->GetSessionDbcLocale())
@@ -206,7 +206,7 @@ public:
 
         bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
         {
-            int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+            int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
             CloseGossipMenuFor(player);
             ClearGossipMenuFor(player);
             switch (gossipListId)
@@ -220,7 +220,7 @@ public:
             case 12:
                 if (player->getLevel() <= DKL)
                 {
-                    player->SetLevel(DKL);
+                    player->GiveLevel(DKL);
                 }
                 player->learnSpell(53428, false);//runeforging
                 player->learnSpell(53441, false);//runeforging
