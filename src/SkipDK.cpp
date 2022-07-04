@@ -105,6 +105,7 @@ public:
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(38707, true);//Runed Soulblade
                 player->AddItem(40483, true);//Insignia of the Scourge
+                player->AddItem(39208, true);//Sigil of the Dark Rider
 
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
                 {
@@ -130,7 +131,8 @@ public:
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
-                ObjectAccessor::SaveAllPlayers();//Save
+                //Don't need to save all players, just current
+                player->SaveToDB(false,false);
             }
         }
 
@@ -167,6 +169,7 @@ public:
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(38707, true);//Runed Soulblade
                 player->AddItem(40483, true);//Insignia of the Scourge
+                player->AddItem(39208, true);//Sigil of the Dark Rider
 
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
                 {
@@ -192,7 +195,8 @@ public:
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
-                ObjectAccessor::SaveAllPlayers();//Save
+                //Don't need to save all players, just current
+                player->SaveToDB(false, false);
             }
         }
     }
@@ -289,6 +293,7 @@ public:
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(38707, true);//Runed Soulblade
                 player->AddItem(40483, true);//Insignia of the Scourge
+                player->AddItem(39208, true);//Sigil of the Dark Rider
 
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
                 {
@@ -314,7 +319,8 @@ public:
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
-                ObjectAccessor::SaveAllPlayers();//Save
+                //Don't need to save all players, just current
+                player->SaveToDB(false, false);
                 CloseGossipMenuFor(player);
                 break;
 
