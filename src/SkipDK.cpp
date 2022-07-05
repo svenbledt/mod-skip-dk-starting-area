@@ -91,7 +91,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     }
 
     STARTER_QUESTS[22] = specialSurpriseQuestId;
-    STARTER_QUESTS[32] = player->GetTeamId() == ALLIANCE ? 13188 : 13189;
+    STARTER_QUESTS[32] = player->GetTeamId() == TEAM_ALLIANCE ? 13188 : 13189;
 
     for (int questId : STARTER_QUESTS)
     {
