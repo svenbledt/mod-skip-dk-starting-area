@@ -2,8 +2,6 @@
 
 ## mod-skip-dk-starting-area
 
-- Latest build status with azerothcore: [![Build Status](https://github.com/azerothcore/mod-skip-dk-starting-area/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-skip-dk-starting-area)
-
 ## Description
 
 - Skips the Death Knight starting zone, for those who want to make a Death Knight without having to go through the starting area.
@@ -41,7 +39,7 @@ Creatures.CustomIDs = "190010,55005,999991,25462,98888"
 
 1. Simply place the module under the `modules` directory of your AzerothCore source. 
 2. Re-run CMake and rebuild the AzerothCore source.
-3. Run Sql on world from https://github.com/azerothcore/mod-skip-dk-starting-area/tree/master/sql/world
+3. Run Sql on world from https://github.com/azerothcore/mod-skip-dk-starting-area/tree/master/sql/world on to the world db.
 ## Edit module configuration (optional)
 
 If you need to change the module configuration, go to your server configuration folder (where your worldserver or worldserver.exe is), copy SkipDKModule.conf.dist to SkipDKModule.conf and edit that new file.
