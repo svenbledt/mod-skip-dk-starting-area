@@ -109,7 +109,7 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
     //these are alternate reward items from quest 12801, item 38633 is chosen by default as the reward
     player->AddItem(38632, true);//Greatsword of the Ebon Blade
 
-    int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+    int DKL = sConfigMgr->GetOption<float>("Skip.Deathknight.Start.Level", 58);
     if (player->getLevel() <= DKL)
     {
         //GiveLevel updates character properties more thoroughly than SetLevel
@@ -153,8 +153,8 @@ public:
         if (player->GetAreaId() == 4342)
         {
             //These changes make it so user mistakes in the configuration file don't cause this to run 2x
-            if ((sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Enable", true) && player->GetSession()->GetSecurity() == SEC_PLAYER)
-                || (sConfigMgr->GetBoolDefault("GM.Skip.Deathknight.Starter.Enable", true) && player->GetSession()->GetSecurity() >= SEC_MODERATOR))
+            if ((sConfigMgr->GetOption<bool>("Skip.Deathknight.Starter.Enable", true) && player->GetSession()->GetSecurity() == SEC_PLAYER)
+                || (sConfigMgr->GetOption<bool>("GM.Skip.Deathknight.Starter.Enable", true) && player->GetSession()->GetSecurity() >= SEC_MODERATOR))
             {
                 Azerothcore_skip_deathknight_HandleSkip(player);
             }
