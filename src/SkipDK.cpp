@@ -132,6 +132,12 @@ void Azerothcore_skip_deathknight_HandleSkip(Player* player)
         player->TeleportTo(1, 1569.59f, -4397.63f, 7.70f, 0.54f);//Orgrimmar
         player->SetHomebind(Hloc, 1653);// Orgrimmar Homebind location
     }
+
+    if (sConfigMgr->GetOption<bool>("DeleteGold.Deathknight.Optional.Enable", true))
+    {
+        int DKM = sConfigMgr->GetOption<int32>("StartHeroicPlayerMoney", 2000);
+        player->SetMoney(DKM);
+    }
 }
 
 class AzerothCore_skip_deathknight_announce : public PlayerScript

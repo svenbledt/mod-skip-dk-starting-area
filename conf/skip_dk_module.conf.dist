@@ -48,3 +48,11 @@ Skip.Deathknight.Start.Level = 58
 #
 
 Skip.Deathknight.Optional.Enable = 1
+
+#
+#    DeleteGold.Deathknight.Optional.Enable
+#    Enables option to delete all gold reward from quests on skip of dk. To stop this as sort of exploitative gold income.
+#    Default: 1 - (Active)
+#
+
+DeleteGold.Deathknight.Optional.Enable = 1
